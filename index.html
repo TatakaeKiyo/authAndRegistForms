@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tatakae</title>
+    <script src="/script.js"></script>
+</head>
+<body>
+    <!-- <h1>Tatakae</h1> -->
+    <div id="formContainer">
+    <form id="registrationForm">
+    <div class="formContainer">
+        <h2>Регистрация</h2>
+        <label for="email">
+            <strong>Почта</strong>
+        </label>
+        <input type="text" id="email" placeholder="Введите почту" name="email" required>
+        <label for="password">
+            <strong>Пароль</strong>
+        </label>
+        <input type="password" id="password" placeholder="Введите пароль" name="password" required>
+        <label for="repeatPassword">
+            <strong>Повторите пароль</strong>
+        </label>
+        <input type="password" id="repeatPassword" placeholder="Повторите пароль" name="repeatPassword" required>
+        <div>
+            <button type="submit" class="signup">
+                Зарегистрироваться
+            </button>
+        </div>
+        <p>Уже есть учетная запись? <a href="?" onclick="showLoginForm();return false;">Войти</a></p>    
+    </div>
+    </form>
+
+    <form id="loginForm" style="display: none;">
+        <div class="formContainer">
+        <h3>Авторизация</h3>
+        <label for="email">
+            <strong>Почта</strong>
+        </label>
+        <input type="text" id="email" placeholder="Введите почту" name="email" required>
+        <label for="password">
+            <strong>Пароль</strong>
+        </label>
+        <input type="password" id="password" placeholder="Введите пароль" name="password" required>
+        <div>
+            <button type="submit" class="signup">
+                Войти
+            </button>
+        </div>
+        <p>Нет учетной записи? <a href="?" onclick="showRegistrationForm();return false;">Зарегистрироваться</a></p>
+        <div class="message" id="message"></div>
+    </div>
+    </form>
+    </div>
+
+
+    <script>
+        document.getElementById('registrationForm').onsubmit = async function(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch('http://localhost:8000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (response.ok) {
+                alert('Пользователь успешно зарегистрирован!');
+                event.preventDefault();
+            
+            } else {
+                const data = await response.json();
+                alert(data.message); 
+                event.preventDefault();
+            
+            }
+        }    
+    </script>
+
+    <script>
+            document.getElementById('loginForm').onsubmit = async function(event) {
+                event.preventDefault(); // предотвращает перезагрузку страницы
+        
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+        
+                const response =  await fetch('http://localhost:8000/authorization', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: email, password: password})
+                })
+                if (response.ok) {
+                    alert('Good!')
+                    event.preventDefault();
+            
+                } else {
+                    const data = await response.json();
+                    alert(data.message); 
+                    event.preventDefault();
+            
+                }
+            }
+        
+    </script>
+</body>
+</html>

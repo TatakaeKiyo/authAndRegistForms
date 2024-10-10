@@ -1,0 +1,99 @@
+html, body {
+    height: 100%; 
+    margin: 0;   
+}
+
+body {
+    background-image: url("/img/background2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+     
+}
+h1 {
+    color: #6a009b;
+}
+
+#formContainer {
+    display: flex;              
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; /* Добавьте это для вертикального выравнивания элементов формы */
+    position: absolute; /* Абсолютное позиционирование для центрирования */
+    top: 50%; /* Сдвигаем форму вниз на 50% высоты */
+    left: 50%; /* Сдвигаем форму вправо на 50% ширины */
+    transform: translate(-50%, -50%); /* Центрируем форму */
+}
+
+#registrationForm {
+    background-color: rgba(27, 27, 27, 0.9); /* Полупрозрачный белый цвет */
+    border-radius: 20px; /* Закругление углов */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Тень для эффекта */
+    backdrop-filter: blur(10px); /* Эффект размытия фона */
+    padding: 20px;
+    width: 600px;
+    height: 500px;
+}
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h2 {
+    text-align: center;
+    color: aliceblue;
+}
+
+label {
+    margin-top: 15px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px; /* Здесь регулируется пространство между полями */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup {
+    width: 100%;
+    padding: 10px;
+    background-color: #6a009b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup:hover {
+    background-color: #000000;
+}
+
+p {
+    text-align: center;
+    color:aliceblue;
+}
+
+a {
+    color: aliceblue;
+}
+
+h3 {
+    color: aliceblue;
+} 
+
+#loginForm {
+    background-color: rgba(27, 27, 27, 0.9); /* Полупрозрачный белый цвет */
+    border-radius: 20px; /* Закругление углов */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Тень для эффекта */
+    backdrop-filter: blur(10px); /* Эффект размытия фона */
+    padding: 20px;
+    width: 400px;
+    height: 400px;
+}
+
+
+

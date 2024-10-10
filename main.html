@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatakae</title>
+    
+</head>
+<body>
+    <header>
+        <h1>Музыкальный Плеер</h1>
+        <input type="text" placeholder="Поиск музыки..." id="search-bar">
+        <div>
+            <span id="profile-icon" onclick="toggleMenu()" style="cursor:pointer;">Профиль</span>
+            <div id="profile-menu" style="display:none;">
+                <button>Изменить профиль</button><br>
+                <button>Выйти</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="container">
+        <div id="playlists-section">
+            <h2>Плейлисты</h2>
+            <ul>
+                <li>Плейлист 1</li>
+                <li>Плейлист 2</li>
+                <li>Плейлист 3</li>
+                <li>Плейлист 4</li>
+            </ul>
+        </div>
+
+        <div id="songs-section">
+            <h2>Песни из Плейлиста</h2>
+            <ul>
+                <li>Песня 1</li>
+                <li>Песня 2</li>
+                <li>Песня 3</li>
+                <li>Песня 4</li>
+            </ul>
+        </div>
+
+        <div id="artist-info-section">
+            <h2>Информация об Авторе</h2>
+            <p><strong>Имя автора:</strong> Имя исполнителя</p>
+            <p><strong>Альбом:</strong> Название альбома</p>
+            <p><strong>Жанр:</strong> Жанр музыки</p>
+            <p><strong>Год:</strong> 2023</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Музыкальный Плеер</p>
+    </footer>
+</body>
+</html>
